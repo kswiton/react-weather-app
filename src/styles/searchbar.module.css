@@ -1,0 +1,40 @@
+.form {
+    overflow: hidden;
+    border-radius: 5px;
+    border: solid 2px white;
+}
+
+.input {
+    width: 300px;
+    height: 3rem;
+    font-size: 2rem;
+    padding-right: 3rem;
+    padding-left: 0.5rem;
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+}
+
+.submit {
+    height: 3rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    background: transparent;
+    border: none;
+}
+
+
+.spinner {
+    height: 2rem;
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate{
+    to{ transform: rotate(360deg); }
+}
+
+.search {
+    height: 2rem;
+}
