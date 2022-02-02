@@ -8,7 +8,6 @@
 
 .forecast {
     background-image: linear-gradient(rgb(255, 255, 255, 0), rgb(255, 255, 255, 0.5));;
-    width: 500px;
     border: solid 2px;
     border-radius: 5px;
     height: max-content;

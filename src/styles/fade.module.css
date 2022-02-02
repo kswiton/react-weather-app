@@ -1,9 +1,7 @@
 .input {
-    width: 100%;
+    width: 85%;
     height: 3rem;
     font-size: 2rem;
-    padding-right: 3rem;
-    padding-left: 0.5rem;
     background: transparent;
     color: white;
     border: none;

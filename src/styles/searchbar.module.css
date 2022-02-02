@@ -1,16 +1,13 @@
 .form {
-    overflow: hidden;
     border-radius: 5px;
     border: solid 2px white;
     
 }
 
 .input {
-    width: 100%;
+    width: 85%;
     height: 3rem;
     font-size: 2rem;
-    padding-right: 3rem;
-    padding-left: 0.5rem;
     background: transparent;
     color: white;
     border: none;
@@ -25,9 +22,8 @@
 
 .submit {
     height: 3rem;
-    position: absolute;
-    top: 0.3rem;
-    right: 0.3rem;
+    position: relative;
+    top: 0.2rem;
     background: transparent;
     border: none;
 }

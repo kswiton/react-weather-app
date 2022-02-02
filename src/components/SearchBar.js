@@ -6,7 +6,7 @@ import axios from 'axios'
 
 
 function SearchBar ({searchLocationProp, locationProp}) {
-    const cities = ['Warsaw', 'Berlin', 'Paris', 'London', 'New York', 'Los Angeles', 'Sydney', 'Tokyo', 'Hong Kong', 'Cairo', 'Moscow']
+    const cities = ['Search city...', 'Warsaw', 'Berlin', 'Paris', 'London', 'New York', 'Los Angeles', 'Sydney', 'Tokyo', 'Hong Kong', 'Moscow']
     const [locationInput, setLocationInput] = useState()
     const [isLoading, setIsLoading] = useState(false)
     const [counter, setCounter] = useState(0);
