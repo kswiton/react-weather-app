@@ -1,4 +1,5 @@
 .weather {
+  background-image: linear-gradient( rgb(255, 255, 255, 0.5), rgb(255, 255, 255, 0) );
   border: solid 2px;
   min-height: 1rem;
     margin-top: 1rem;
@@ -17,7 +18,6 @@
   }
   .icon {
     
-    height: 7rem;
     animation-name: breath;
     animation-duration: 1s;
     animation-iteration-count: infinite;

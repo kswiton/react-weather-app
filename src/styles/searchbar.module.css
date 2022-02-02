@@ -2,6 +2,7 @@
     overflow: hidden;
     border-radius: 5px;
     border: solid 2px white;
+    
 }
 
 .input {
@@ -31,6 +32,15 @@
     border: none;
 }
 
+.cross {
+    height: 2rem;
+    position: absolute;
+    top: 0.3rem;
+    right: 3rem;
+    background: transparent;
+    border: none;
+}
+
 
 .spinner {
     height: 2rem;
@@ -45,6 +55,3 @@
     height: 2rem;
 }
 
-.cross {
-    height: 2rem;
-}

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import styles from '../styles/forecast.module.css';
-import styles2 from '../styles/forecast2.module.css';
 import axios from 'axios'
+import CardWeather from './CardWeather';
 
 
 const Forecast = ({location}) => {
@@ -10,14 +10,13 @@ const [forecast, setForecast] = useState()
 const [time, setTime] = useState(0)
 const [disableEarlier, setDisableEarlier] = useState(true);
 const [disableLater, setDisableLater] = useState(true);
-const styl = forecast ? styles.forecast : styles2.forecast
-const d = new Date();
-let date = d.getDate();
 
-const daysNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const monthsNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-let name = monthsNames[d.getMonth()];
-let day = daysNames[d.getDay()];
+// const d = new Date();
+// let date = d.getDate();
+// const daysNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// const monthsNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+// let name = monthsNames[d.getMonth()];
+// let day = daysNames[d.getDay()];
 
 
 useEffect(()=>{
@@ -63,31 +62,42 @@ function fetchForecast() {
 return (
     <div>
         
-    <div className={styl}>
-    {forecast ? <h2>Forecast</h2> : ''}
+    <div className={styles.forecast}>
+    <h2>Forecast</h2>
     <div className={styles.container}>
         <div> {forecast ? <button  className={styles.button} disabled={disableEarlier} onClick={earlierHandler}><img src="../../left.svg" alt ='left' className={styles.icon}/></button> : ''}</div>
         <div>
+
         <p> {forecast ? (forecast[time+1].dt_txt).substring(0, 10) : ''} </p>
         <p> {forecast ? (forecast[time+1].dt_txt).substring(11, 16) : ''} </p>
-        {forecast ? <p><img src="../../temp.svg" alt ='temp' className={styles.icon}/> {forecast[time+1].main.temp}</p> : ''}
+        {forecast ? <p><img src="../../temp.svg" alt ='temp' className={styles.icon}/> {`${Math.round(forecast[time+1].main.temp * 10) / 10}°C`}</p> : ''}
+        {forecast ? <img src={`http://openweathermap.org/img/wn/${forecast[time+1].weather[0].icon}@2x.png`} alt='weather icon'/>  : ''}
+
         </div>
 
         <div>
         <p> {forecast ? (forecast[time+2].dt_txt).substring(0, 10) : ''} </p>
         <p> {forecast ? (forecast[time+2].dt_txt).substring(11, 16) : ''} </p>
-        {forecast ? <p><img src="../../temp.svg" alt ='temp' className={styles.icon}/> {forecast[time+2].main.temp}</p> : ''}
+        {forecast ? <p><img src="../../temp.svg" alt ='temp' className={styles.icon}/> {`${Math.round(forecast[time+2].main.temp * 10) / 10}°C`}</p> : ''}
+        <p> {forecast ? <img src={`http://openweathermap.org/img/wn/${forecast[time+2].weather[0].icon}@2x.png`} alt='weather icon'/>  : ''} </p>
         </div>
 
         <div>
         <p> {forecast ? (forecast[time+3].dt_txt).substring(0, 10) : ''} </p>
         <p> {forecast ? (forecast[time+3].dt_txt).substring(11, 16) : ''} </p>
-        {forecast ? <p><img src="../../temp.svg" alt ='temp' className={styles.icon}/> {forecast[time+3].main.temp}</p> : ''}
+        {forecast ? <p><img src="../../temp.svg" alt ='temp' className={styles.icon}/> {`${Math.round(forecast[time+3].main.temp * 10) / 10}°C`}</p> : ''}
+        <p> {forecast ? <img src={`http://openweathermap.org/img/wn/${forecast[time+3].weather[0].icon}@2x.png`} alt='weather icon'/>  : ''} </p>
         </div>
         <div> {forecast ? <button className={styles.button} disabled={disableLater} onClick={laterHandler}><img src="../../right.svg" alt ='right' className={styles.icon}/></button> : ''}</div>
         </div>
     </div>
-    
+
+
+
+{/* <CardWeather forecast={forecast}/> */}
+
+
+
     </div>
 )
 }

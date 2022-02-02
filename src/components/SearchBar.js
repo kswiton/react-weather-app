@@ -6,23 +6,21 @@ import axios from 'axios'
 
 
 function SearchBar ({searchLocationProp, locationProp}) {
-    let fade1 = styles.input;
-    let fade2 = fade.input;
     const cities = ['Warsaw', 'Berlin', 'Paris', 'London', 'New York', 'Los Angeles', 'Sydney', 'Tokyo', 'Hong Kong', 'Cairo', 'Moscow']
-    const [locationInput, setLocationInput] = useState('')
+    const [locationInput, setLocationInput] = useState()
     const [isLoading, setIsLoading] = useState(false)
     const [counter, setCounter] = useState(0);
-    const [fader, setFader] = useState (fade1)
+    const [fader, setFader] = useState (styles.input)
 
 
     useEffect(()=> {
       if (counter < 11) {
             setTimeout(()=>{
-                {setFader(fade2);
-                setTimeout(()=>{setCounter(counter+1); setFader(fade1)}, 400)
-                } 
+                setFader(fade.input);
+                setTimeout(()=>{setCounter(counter+1); setFader(styles.input)}, 400)
             }, 2000) } else {setCounter(0)} 
     }, [counter])
+
 
     function fetchData() {
         axios
@@ -36,7 +34,8 @@ function SearchBar ({searchLocationProp, locationProp}) {
             pres: res.data.main.pressure,
             windDeg: `${res.data.wind.deg}°`, 
             windSpeed: `${res.data.wind.speed}km/h`,
-            cloud: res.data.weather[0].description}
+            cloud: res.data.weather[0].description,
+            code: res.data.weather[0].icon}
         
         console.log(fetchedData)
         searchLocationProp(fetchedData)
@@ -70,7 +69,6 @@ function SearchBar ({searchLocationProp, locationProp}) {
         
         setTimeout(() => {setIsLoading(false)}, 300);   
     }
-    
 
     return (
         <div className={styles.form}>

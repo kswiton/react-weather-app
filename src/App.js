@@ -4,6 +4,7 @@ import { useState, } from "react";
 import SearchBar from './components/SearchBar';
 import Weather from './components/Weather';
 import Forecast from './components/Forecast';
+import CardWeather from './components/CardWeather';
 
 
 
@@ -16,8 +17,8 @@ const styl = location ? styles.container : styles2.container
 return (
   <div className={styl}>
     <SearchBar searchLocationProp={(fetchedData) => setWeatherData(fetchedData)} locationProp={(locationInput) => setLocation(locationInput)} />
-    <Weather weatherData={weatherData} />
-    <Forecast location={location} />
+    { location ? <Weather weatherData={weatherData} /> : '' }
+    { location ? <Forecast location={location} /> : '' }
     
     
 

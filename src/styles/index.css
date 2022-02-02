@@ -8,10 +8,13 @@ body {
   background: url('../../public/wallpaper.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100%;
-  
-  overflow: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
 
 
 code {
