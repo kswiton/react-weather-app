@@ -11,7 +11,7 @@
     border-radius: 5px;
     height: max-content;
     
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.4s;
 }
 

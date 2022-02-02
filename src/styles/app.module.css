@@ -1,9 +1,11 @@
 .container {
   text-align: center;
+  overflow: hidden;
   color: white;
   position: absolute;
   left: 35%;
-  top: 35%;
+  top: 5%;
+  transition: top 1s;
   
 }
 

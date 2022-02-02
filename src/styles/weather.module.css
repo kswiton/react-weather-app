@@ -1,6 +1,31 @@
 .weather {
+  border: solid 2px;
+  min-height: 1rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
     text-align: center;
     color: white;
+    opacity: 1;
+    transition: opacity 0.4s;
+    display: flex;
   }
   
-  
+  .iconcontainer {
+    margin: auto;
+  }
+  .icon {
+    
+    height: 7rem;
+    animation-name: breath;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  animation-direction: alternate;
+  }
+
+  @keyframes breath {
+    from {height: 7rem}
+    to {height: 8rem}
+
+  }
