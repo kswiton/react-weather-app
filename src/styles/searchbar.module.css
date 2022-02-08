@@ -1,6 +1,7 @@
 .form {
     border-radius: 5px;
     border: solid 2px white;
+    background: rgba(128, 128, 128, 0.5);
     
 }
 

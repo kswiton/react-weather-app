@@ -1,5 +1,7 @@
 .weather {
-  background-image: linear-gradient( rgb(255, 255, 255, 0.5), rgb(255, 255, 255, 0) );
+  /* background-image: linear-gradient( rgb(255, 255, 255, 0.5), rgb(255, 255, 255, 0) ); */
+  background: rgba(128, 128, 128, 0.5);
+
   border: solid 2px;
   min-height: 1rem;
     margin-top: 1rem;

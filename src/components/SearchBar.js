@@ -25,6 +25,7 @@ function SearchBar ({searchLocationProp, locationProp}) {
     function fetchData() {
         axios
         .get(`https://api.openweathermap.org/data/2.5/weather?q=${locationInput}&APPID=43fe38a4d560f5939eda3db924493b03&units=metric`)
+        
         .then(res => {
           const fetchedData = {
             name: `${res.data.name}, `, 
@@ -36,12 +37,11 @@ function SearchBar ({searchLocationProp, locationProp}) {
             windSpeed: `${res.data.wind.speed}km/h`,
             cloud: res.data.weather[0].description,
             code: res.data.weather[0].icon}
-        
-        console.log(fetchedData)
+            console.log(fetchedData)
         searchLocationProp(fetchedData)
         locationProp(locationInput)
-        
         })
+        
         .catch(err => {
           console.log(err)
         })
@@ -66,8 +66,7 @@ function SearchBar ({searchLocationProp, locationProp}) {
         if (locationInput.trim() === "") return;
         setIsLoading(true)
         fetchData();
-        
-        setTimeout(() => {setIsLoading(false)}, 300);   
+        setIsLoading(false);   
     }
 
     return (
